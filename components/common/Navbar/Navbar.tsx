@@ -73,7 +73,7 @@ const NavbarStyled = styled.nav<StyledProps>`
       grid-auto-columns: max-content;
       justify-content: space-between;
       align-items: center;
-      padding: 16px;
+      padding: 16px 0;
     }
 
     ul {

@@ -79,6 +79,12 @@ const HeaderStyled = styled.header`
       display: none;
     }
   }
+
+  @media (min-width: 1024px) {
+    .contactInfo {
+      gap: 40px;
+    }
+  }
 `
 
 const Header: React.FC = () => {

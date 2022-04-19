@@ -13,7 +13,15 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 }
 
 const ButtonStyled = styled.button<ButtonProps>`
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 12px 30px;
+  box-shadow: 0px 4px 8px 0px rgba(0, 49, 16, 0.35);
+  color: ${({ theme }) => theme.colors.secundaryLight};
   width: ${({ width }) => width ? `${width}px` : 'max-content'};
+  background-color: ${({ theme }) => theme.colors.primary};
+
 `
 
 const Button: React.FC<ButtonProps> = ({

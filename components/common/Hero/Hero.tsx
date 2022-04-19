@@ -1,33 +1,33 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
+// Components
+import Button from '@components/common/Button'
+
 // Config
 import { Wrapper } from '@config/themeConfig'
 
 type StyledProps = {
-  imageLabel?: string
-  imageUrl?: string
-  videoLabel?: string
-  videoUrl?: string
+  backgroundImage: string
 }
 
 type Props = {
   headline: string
   description: string
+  backgroundImage: string
   className?: string
-  imageLabel?: string
-  imageUrl?: string
-  videoLabel?: string
-  videoUrl?: string
 }
 
 const HeroStyled = styled.section<StyledProps>`
+  height: calc(100vh - 62px);
   width: 100%;
   display: grid;
   align-items: center;
-  height: calc(100vh - 62px);
   padding: 0 ;
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-image: linear-gradient(to right, rgb(0 0 0 / 59%), rgba(37, 114, 62, 0.3)), url(${({ backgroundImage }) => backgroundImage});
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   .hero__content {
     display: grid;
@@ -36,12 +36,13 @@ const HeroStyled = styled.section<StyledProps>`
 
   .hero__title {
     font-size: 32px;
+    font-weight: 500;
     color: ${({ theme }) => theme.colors.secundaryLight};
   }
 
   .hero__description {
     max-width: 500px;
-    color: ${({ theme }) => theme.colors.secundaryDark};
+    color: ${({ theme }) => theme.colors.secundaryLight};
   }
 
   @media (min-width: 768px) {
@@ -58,32 +59,20 @@ const HeroStyled = styled.section<StyledProps>`
 
   @media (min-width: 1024px) {
     .hero__title {
-      font-size: 60px;
+      font-size: 70px;
     }
   }
-
-  /* Hero with background image */
-  /* background: ${({ theme, imageUrl }) => imageUrl ? imageUrl : theme.colors.primary}; */
 `
 
-const Hero: React.FC<Props> = ({ className, headline, description, imageUrl,  videoUrl, imageLabel, videoLabel }) => {
+const Hero: React.FC<Props> = ({ className, headline, description, backgroundImage}) => {
   return (
-    <HeroStyled className={className}>
+    <HeroStyled className={className} backgroundImage={backgroundImage}>
       <Wrapper>
         <div className="hero__content">
           <h2 className='hero__title'>{headline}</h2>
           <p className='hero__description'>{description}</p>
+          <Button onClick={() => {}}>Cotizar</Button>
         </div>
-
-        {/* Hero with video */}
-        {/* <div className="hero__video">
-          <video src={videoUrl} muted={true} aria-label="videoLabel"></video>
-        </div> */}
-
-        {/* Hero with image */}
-        {/* <div className="hero__image">
-          <img src={imageUrl} alt={imageLabel} aria-label={imageLabel} />
-        </div> */}
       </Wrapper>
     </HeroStyled>
   )

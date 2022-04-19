@@ -12,6 +12,7 @@ const Home: React.FC = () => {
       <Hero
         headline={hero.headline}
         description={hero.description}
+        backgroundImage={hero.backgroundImage}
       />
     </>
   )

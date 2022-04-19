@@ -18,5 +18,5 @@ export const defaultTheme = {
 }
 
 export const Wrapper = styled.div`
-  padding: 0 3%;
+  padding: 0 5%;
 `

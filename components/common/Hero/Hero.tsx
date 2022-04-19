@@ -25,7 +25,7 @@ const HeroStyled = styled.section<StyledProps>`
   width: 100%;
   display: grid;
   align-items: center;
-  height: calc(100vh - 64px);
+  height: calc(100vh - 66px);
   padding: 0 ;
   background-color: ${({ theme }) => theme.primary};
 
@@ -45,6 +45,8 @@ const HeroStyled = styled.section<StyledProps>`
   }
 
   @media (min-width: 768px) {
+    height: calc(100vh - 105px);
+
     .hero__title {
       font-size: 45px;
     }

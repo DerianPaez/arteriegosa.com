@@ -21,8 +21,8 @@ type Props = {
 
 const FooterStyled = styled.footer`
   padding: 20px 0;
-  border-top: 1px solid ${({ theme }) => theme.stroke};
-  background: ${({ theme }) => theme.primary};
+  border-top: 1px solid ${({ theme }) => theme.colors.stroke};
+  background: ${({ theme }) => theme.colors.primary};
 
   .footer__container {
     display: grid;
@@ -32,7 +32,7 @@ const FooterStyled = styled.footer`
   .footer__title {
     font-size: 18px;
     font-weight: 500;
-    color: ${({ theme }) => theme.secundaryLight};
+    color: ${({ theme }) => theme.colors.secundaryLight};
   }
 
   .footer__contentLinks {
@@ -47,7 +47,7 @@ const FooterStyled = styled.footer`
     }
 
     a {
-      color: ${({ theme }) => theme.secundaryDark};
+      color: ${({ theme }) => theme.colors.secundaryDark};
     }
   }
 

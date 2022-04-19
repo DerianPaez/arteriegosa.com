@@ -5,16 +5,22 @@ import styled from 'styled-components'
 import Header from '@components/common/Header'
 import Navbar from '@components/common/Navbar'
 import Footer from '@components/common/Footer'
+import useUi from '@hooks/useUi'
+
+type StyledProps = {
+  isSidebarOpen: boolean
+}
 
 type Props = {
   children: React.ReactNode,
 }
 
-const LayoutStyles = styled.div`
+const LayoutStyles = styled.div<StyledProps>`
   min-height: 100vh;
+  /* overflow-y: ${({ isSidebarOpen }) => isSidebarOpen ? "hidden" : "scroll"}; */
 
   main {
-    padding-top: 66px;
+    padding-top: 62px;
   }
 
   @media (min-width: 768px) {
@@ -25,8 +31,9 @@ const LayoutStyles = styled.div`
 `
 
 const Layout: React.FC<Props> = ({ children }) => {
+  const { isSidebarOpen } = useUi()
   return (
-    <LayoutStyles>
+    <LayoutStyles isSidebarOpen={isSidebarOpen}>
       <Header />
       <Navbar />
       <main>{children}</main>

@@ -13,11 +13,12 @@ import Menu from '@components/icons/Menu'
 import useUi from '@hooks/useUi'
 import Link from 'next/link'
 
-
 const HeaderStyled = styled.header`
   position: fixed;
   width: 100%;
-  background: ${({ theme }) => theme.secundaryLight};
+  box-shadow: 0px 4px 4px 0px #00000040;
+  z-index: ${({ theme }) => theme.positions.header};
+  background: ${({ theme }) => theme.colors.secundaryLight};
 
   .header__mainContainer {
     display: grid;
@@ -46,7 +47,7 @@ const HeaderStyled = styled.header`
       "icon title"
       "icon text";
     gap: 1px 12px;
-    color: ${({ theme }) => theme.paragraph};
+    color: ${({ theme }) => theme.colors.paragraph};
 
     svg {
       grid-area: icon;
@@ -110,6 +111,7 @@ const Header: React.FC = () => {
                 </div>
               </a>
             </Link>
+
             <div className="contactInfo__item">
               <Clock />
               <h5 className="contactInfo__title">Abierto:</h5>

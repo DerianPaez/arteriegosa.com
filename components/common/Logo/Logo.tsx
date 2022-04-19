@@ -7,7 +7,11 @@ type Props = {
 }
 
 const LogoStyled = styled.div`
-
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `
 
 const Logo: React.FC<Props> = ({ className }) => {

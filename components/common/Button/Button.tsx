@@ -4,7 +4,6 @@ import styled from 'styled-components'
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   href?: string
   className?: string
-  variant?: 'flat' | 'slim' | 'ghost' | 'naked'
   active?: boolean
   type?: 'submit' | 'reset' | 'button'
   width?: string | number

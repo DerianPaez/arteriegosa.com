@@ -25,9 +25,9 @@ const HeroStyled = styled.section<StyledProps>`
   width: 100%;
   display: grid;
   align-items: center;
-  height: calc(100vh - 66px);
+  height: calc(100vh - 62px);
   padding: 0 ;
-  background-color: ${({ theme }) => theme.primary};
+  background-color: ${({ theme }) => theme.colors.primary};
 
   .hero__content {
     display: grid;
@@ -36,16 +36,16 @@ const HeroStyled = styled.section<StyledProps>`
 
   .hero__title {
     font-size: 32px;
-    color: ${({ theme }) => theme.secundaryLight};
+    color: ${({ theme }) => theme.colors.secundaryLight};
   }
 
   .hero__description {
     max-width: 500px;
-    color: ${({ theme }) => theme.secundaryDark};
+    color: ${({ theme }) => theme.colors.secundaryDark};
   }
 
   @media (min-width: 768px) {
-    height: calc(100vh - 105px);
+    height: calc(100vh - 116px);
 
     .hero__title {
       font-size: 45px;
@@ -63,7 +63,7 @@ const HeroStyled = styled.section<StyledProps>`
   }
 
   /* Hero with background image */
-  /* background: ${({ theme, imageUrl }) => imageUrl ? imageUrl : theme.primary}; */
+  /* background: ${({ theme, imageUrl }) => imageUrl ? imageUrl : theme.colors.primary}; */
 `
 
 const Hero: React.FC<Props> = ({ className, headline, description, imageUrl,  videoUrl, imageLabel, videoLabel }) => {

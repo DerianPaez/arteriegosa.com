@@ -10,6 +10,11 @@ import Navlink from '@components/common/Navlink'
 import { useSelector } from 'react-redux'
 import { RootState } from '@state/store'
 import { Wrapper } from '@config/themeConfig';
+import Facebook from '@components/icons/Facebook';
+import Link from 'next/link';
+import Instagram from '@components/icons/Instagram';
+import WhatsApp from '@components/icons/WhatsApp';
+import useUi from '@hooks/useUi';
 
 type StyledProps = {
   isOpen: boolean
@@ -18,27 +23,58 @@ type StyledProps = {
 const NavbarStyled = styled.nav<StyledProps>`
   display: ${({ isOpen }) => isOpen ? 'grid' : 'none'};
   position: fixed;
-  top: 66px;
+  top: 62px;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: ${({ theme }) => theme.primary};
   box-shadow: 0px 4px 4px 0px #00000040;
+  background-color: ${({ theme }) => theme.colors.primary};
+
+  .navbar__container {
+    height: 100%;
+    display: grid;
+    align-content: space-between;
+    padding: 40px 0 20px;
+  }
 
   ul {
     height: max-content;
     display: grid;
     grid-auto-rows: max-content;
     gap: 20px;
-    margin-top: 40px;
+  }
+
+  .navbar__socialMedia {
+    width: max-content;
+    display: grid;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    gap: 20px;
+  }
+
+  .navbar__socialMedia a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar__socialMedia svg {
+    height: 22px;
+    width: max-content;
   }
 
   @media (min-width: 768px) {
     display: grid;
     position: sticky;
-    padding: 10px 0;
     top: 0;
-    background-color: ${({ theme }) => theme.primary};
+
+    .navbar__container {
+      grid-auto-flow: column;
+      grid-auto-columns: max-content;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+    }
 
     ul {
       grid-auto-flow: column;
@@ -46,31 +82,43 @@ const NavbarStyled = styled.nav<StyledProps>`
       margin-top: 0px;
       gap: 40px;
     }
-
-    li a {
-      color: ${({ theme }) => theme.secundaryLight};
-    }
   }
 `
 
 const Navbar: React.FC = () => {
-  const isSidebarOpen = useSelector((state: RootState) => state.ui.isSidebarOpen)
+  const { isSidebarOpen, toogleSidebar } = useUi()
 
   return (
     <NavbarStyled isOpen={isSidebarOpen}>
       <Wrapper>
-        <ul>
-          {navLinks.map((link) => {
-            return (
-              <Navlink
-                key={link.id}
-                id={link.id}
-                name={link.name}
-                url={link.url}
-              />
-            )
-          })}
-        </ul>
+        <div className="navbar__container">
+          <ul>
+            {navLinks.map((link) => {
+              return (
+                <Navlink
+                  key={link.id}
+                  id={link.id}
+                  name={link.name}
+                  url={link.url}
+                  isSidebarOpen={isSidebarOpen}
+                  toggleSidebar={toogleSidebar}
+                />
+              )
+            })}
+          </ul>
+
+          <div className="navbar__socialMedia">
+            <a href="" aria-label="facebook arteriego" target="_blank">
+              <Facebook />
+            </a>
+            <a href="" aria-label="facebook arteriego" target="_blank">
+              <Instagram />
+            </a>
+            <a href="" aria-label="facebook arteriego" target="_blank">
+              <WhatsApp />
+            </a>
+          </div>
+        </div>
       </Wrapper>
     </NavbarStyled>
   )

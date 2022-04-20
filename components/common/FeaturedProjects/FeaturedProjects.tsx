@@ -15,13 +15,14 @@ const FeaturedProjectsStyled = styled.section`
 
   .featuredProjects__container {
     display: grid;
-    gap: 15px;
+    gap: 40px;
   }
 
   .featuredProjects__title {
     font-size: 28px;
     font-weight: 500;
     color: ${({ theme }) => theme.colors.primary};
+    text-align: center;
   }
 
   .featuredProjects__list {

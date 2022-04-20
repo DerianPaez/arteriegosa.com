@@ -1,5 +1,5 @@
 import type { VFC } from 'react'
-import SEO from '@components/common/SEO'
+import SEO from '../SEO'
 
 const Head:VFC = () => {
   return (

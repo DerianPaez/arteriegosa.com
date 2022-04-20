@@ -1,25 +1,12 @@
 {
-  "title": "Template Title",
-  "titleTemplate": "%s - ACME Storefront",
+  "title": "ArteRiego",
+  "titleTemplate": "ArteRiego S.A.",
   "description": "Template to create WebSites of James Loor",
   "openGraph": {
-    "title": "Template Next Js - Styled Components - Typescript",
+    "title": "ArteRiego",
     "description": "Template to create WebSites of James Loor",
     "type": "website",
-    "url": "https://nextjs.org/commerce",
-    "site_name": "Template Nextjs",
-    "images": [
-      {
-        "url": "/card.png",
-        "width": "800",
-        "height": "600",
-        "alt": "Next.js Commerce"
-      }
-    ]
-  },
-  "twitter": {
-    "handle": "@nextjs",
-    "site": "@nextjs",
-    "cardType": "summary_large_image"
+    "url": "https://arteriegosa.com",
+    "site_name": "Arte & Riego"
   }
 }

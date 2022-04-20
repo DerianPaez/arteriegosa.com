@@ -26,7 +26,7 @@ export const navLinks = [
   {
     id: "003",
     name: "Servicios",
-    url: "/services"
+    url: "/servicios"
   },
   {
     id: "004",

@@ -8,15 +8,14 @@ import Image from 'next/image'
 const ProjectStyled = styled.article`
   height: 450px;
   position: relative;
-  z-index: ${({ theme }) => theme.positions.image};
 
   .project__content {
+    position: absolute;
     display: grid;
     align-items: flex-end;
     width: 100%;
     height: 100%;
     padding: 15px 20px;
-    position: absolute;
     box-shadow: 0px -85px 23px -20px rgba(0, 0, 0, 0.5) inset;
   }
 
@@ -30,19 +29,16 @@ const ProjectStyled = styled.article`
 const Project: React.FC<ProjectType> = ({ id, name, image }) => {
   return (
     <ProjectStyled id={id}>
-      <div className="project__image">
-        {image &&
-          <Image
-            src={image}
-            alt={name}
-            aria-label={name}
-            width="737.41"
-            height="1080"
-            layout="fill"
-            objectFit="cover"
-          />
-        }
-      </div>
+      {image &&
+        <Image
+          src={image}
+          alt={name}
+          aria-label={name}
+          layout="fill"
+          objectFit="cover"
+          priority={false}
+        />
+      }
       <div className="project__content">
         <h3 className="project__name">{name}</h3>
       </div>

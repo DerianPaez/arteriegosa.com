@@ -145,6 +145,7 @@ const PublicityProduct: React.FC<Props> = ({ productList }) => {
                 objectFit="contain"
                 width={1080}
                 height={1080}
+                priority={false}
               />
             }
           </div>
@@ -170,10 +171,10 @@ const PublicityProduct: React.FC<Props> = ({ productList }) => {
             </ul>
           </div>
           <div className="publicityProduct__controllers">
-            <button disabled={product === 0 ? true : false} className="handle left" onClick={() => prevProduct()}>
+            <button className="handle left" onClick={() => prevProduct()}>
               <ArrowLeft width="19" height="100%" />
             </button>
-            <button disabled={product === lastProduct ? true : false} className="handle right" onClick={() => nextProduct()}>
+            <button className="handle right" onClick={() => nextProduct()}>
               <ArrowRight width="19" height="100%" />
             </button>
           </div>

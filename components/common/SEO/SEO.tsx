@@ -20,31 +20,8 @@ interface Props {
     description?: string
     site_name?: string
     url?: string
-    images?: OgImage[]
   }
   children?: ReactNode
-}
-
-const ogImage = ({ url, width, height, alt }: OgImage, index: number) => {
-  return (
-    <Fragment key={`og:image:${index}`}>
-      <meta
-        key={`og:image:width:${index}`}
-        property="og:image:width"
-        content={width}
-      />
-      <meta
-        key={`og:image:height:${index}`}
-        property="og:image:height"
-        content={height}
-      />
-      <meta
-        key={`og:image:alt:${index}`}
-        property="og:image:alt"
-        content={alt}
-      />
-    </Fragment>
-  )
 }
 
 const SEO: FC<Props> = ({
@@ -107,30 +84,6 @@ const SEO: FC<Props> = ({
       ></meta>
       {openGraph?.locale && (
         <meta key="og:locale" property="og:locale" content={openGraph.locale} />
-      )}
-      {openGraph?.images?.length
-        ? openGraph.images.map((img, index) => ogImage(img, index))
-        : ogImage(config.openGraph.images[0], 0)}
-      {config.twitter.cardType && (
-        <meta
-          key="twitter:card"
-          name="twitter:card"
-          content={config.twitter.cardType}
-        />
-      )}
-      {config.twitter.site && (
-        <meta
-          key="twitter:site"
-          name="twitter:site"
-          content={config.twitter.site}
-        />
-      )}
-      {config.twitter.handle && (
-        <meta
-          key="twitter:creator"
-          name="twitter:creator"
-          content={config.twitter.handle}
-        />
       )}
       <meta key="robots" name="robots" content={robots ?? 'index,follow'} />
       <meta

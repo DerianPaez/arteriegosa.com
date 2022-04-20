@@ -13,7 +13,9 @@ export const defaultTheme = {
   },
   positions: {
     header: 1000,
-    navbar: 900
+    navbar: 900,
+    controllers: 600,
+    image: 500,
   }
 }
 

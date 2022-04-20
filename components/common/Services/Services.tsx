@@ -1,21 +1,17 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
+// Data
+import { ServicesType, ServiceType } from '@data/services.data'
+
 // Config
 import { Wrapper } from '@config/themeConfig'
+
+// Components
 import ServiceItem from './ServiceItem'
 
-interface Service {
-  id: string
-  name: string
-  description: string
-  icon: string
-}
-
 type Props = {
-  title: string,
-  text: string,
-  serviceList: Service[]
+  serviceData: ServicesType
 }
 
 const ServicesStyled = styled.section`
@@ -54,6 +50,10 @@ const ServicesStyled = styled.section`
   }
 
   @media (min-width: 768px) {
+    .services__title {
+      font-size: 32px;
+    }
+
     .services__text {
       font-size: 20px;
       width: 690px;
@@ -66,19 +66,25 @@ const ServicesStyled = styled.section`
       grid-auto-columns: 1fr;
     }
   }
+
+  @media (min-width: 1024px) {
+    .services__title {
+      font-size: 40px;
+    }
+  }
 `
 
-const Services: React.FC<Props> = ({ title, text, serviceList }) => {
+const Services: React.FC<Props> = ({ serviceData }) => {
   return (
     <ServicesStyled>
       <Wrapper>
         <div className="services__container">
           <div className="services__header">
-            <h2 className="services__title">{title}</h2>
-            <p className="services__text">{text}</p>
+            <h2 className="services__title">{serviceData.title}</h2>
+            <p className="services__text">{serviceData.text}</p>
           </div>
           <div className="services__grid">
-            {serviceList.map((service: Service) => {
+            {serviceData.servicesList.map((service: ServiceType) => {
               return (
                 <ServiceItem
                   key={service.id}

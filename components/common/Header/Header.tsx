@@ -32,6 +32,9 @@ const HeaderStyled = styled.header`
     display: flex;
     justify-content: center;
     align-items: center;
+    outline: none;
+    border: none;
+    background: none;
   }
 
   .contactInfo {

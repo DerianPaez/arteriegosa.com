@@ -17,6 +17,9 @@ const ButtonStyled = styled.button<ButtonProps>`
   font-weight: 500;
   border-radius: 8px;
   padding: 12px 30px;
+  outline: none;
+  border: none;
+  cursor: pointer;
   box-shadow: 0px 4px 8px 0px rgba(0, 49, 16, 0.35);
   color: ${({ theme }) => theme.colors.secundaryLight};
   width: ${({ width }) => width ? `${width}px` : 'max-content'};

@@ -1,6 +1,9 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
+// data
+import { HeroType } from '@data/hero.data'
+
 // Components
 import Button from '@components/common/Button'
 
@@ -12,9 +15,7 @@ type StyledProps = {
 }
 
 type Props = {
-  headline: string
-  description: string
-  backgroundImage: string
+  heroData: HeroType
   className?: string
 }
 
@@ -64,13 +65,13 @@ const HeroStyled = styled.section<StyledProps>`
   }
 `
 
-const Hero: React.FC<Props> = ({ className, headline, description, backgroundImage}) => {
+const Hero: React.FC<Props> = ({ className, heroData}) => {
   return (
-    <HeroStyled className={className} backgroundImage={backgroundImage}>
+    <HeroStyled className={className} backgroundImage={heroData.backgroundImage}>
       <Wrapper>
         <div className="hero__content">
-          <h2 className='hero__title'>{headline}</h2>
-          <p className='hero__description'>{description}</p>
+          <h2 className='hero__title'>{heroData.headline}</h2>
+          <p className='hero__description'>{heroData.description}</p>
           <Button onClick={() => {}}>Cotizar</Button>
         </div>
       </Wrapper>

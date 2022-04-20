@@ -28,6 +28,7 @@ const NavbarStyled = styled.nav<StyledProps>`
   left: 0;
   right: 0;
   box-shadow: 0px 4px 4px 0px #00000040;
+  z-index: ${({ theme }) => theme.positions.navbar};
   background-color: ${({ theme }) => theme.colors.primary};
 
   .navbar__container {

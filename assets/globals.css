@@ -29,13 +29,6 @@ li {
   list-style: none;
 }
 
-button {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background: none;
-}
-
 input, textarea {
   border: none;
   outline: none;

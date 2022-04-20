@@ -1,4 +1,18 @@
-export const services = {
+
+export interface ServiceType {
+  id: string,
+  name: string,
+  description: string,
+  icon: string
+}
+
+export type ServicesType = {
+  title: string,
+  text: string,
+  servicesList: ServiceType[]
+}
+
+export const services: ServicesType = {
   title: "Nuestros Servicios",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
   servicesList: [

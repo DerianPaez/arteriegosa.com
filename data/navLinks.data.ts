@@ -12,7 +12,7 @@ export type NavLinkType = {
   url: string
 }
 
-export const navLinks = [
+export const navLinks: NavLinkType[] = [
   {
     id: "001",
     name: "Inicio",

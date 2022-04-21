@@ -6,13 +6,8 @@ import Mision from '@components/icons/Mision'
 import Vision from '@components/icons/Vision'
 import { Paragraph } from '@config/themeConfig'
 
-export enum StrategicMapIcons {
-  mision = "Mision",
-  vision = "Vision"
-}
-
 type Props = {
-  icon: StrategicMapIcons.mision | StrategicMapIcons.vision
+  icon: "Mision" | "Vision"
   title: string
   text: string
 }

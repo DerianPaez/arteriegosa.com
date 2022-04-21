@@ -70,7 +70,7 @@ const Hero: React.FC<Props> = ({ className, heroData}) => {
     <HeroStyled className={className} backgroundImage={heroData.backgroundImage}>
       <Wrapper>
         <div className="hero__content">
-          <h2 className='hero__title'>{heroData.headline}</h2>
+          <h1 className='hero__title'>{heroData.headline}</h1>
           <p className='hero__description'>{heroData.description}</p>
           <Button onClick={() => {}}>Cotizar</Button>
         </div>

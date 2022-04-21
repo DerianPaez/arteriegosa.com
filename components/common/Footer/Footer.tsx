@@ -85,14 +85,42 @@ const FooterStyled = styled.footer`
   }
 
   .legal {
+    padding: 20px 0;
     background-color: #042710;
+    text-align: center;
     color: ${({ theme }) => theme.colors.secundaryLight};
+  }
+
+  .legal__container {
+    display: grid;
+    gap: 5px;
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .legal__links {
+    color: ${({ theme }) => theme.colors.secundaryLight};
+    font-size: 14px;
   }
 
   @media (min-width: 768px) {
     .footer__container {
       grid-auto-flow: column;
       grid-auto-columns: 1fr;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .footer__container {
+      grid-template-areas:
+        "contactInfo main socialMedia";
+    }
+
+    .legal__container {
+      grid-template-columns: repeat(2, max-content);
+      justify-content: space-between;
     }
   }
 `
@@ -138,20 +166,24 @@ const Footer: React.FC<Props> = () => {
         </div>
       </Wrapper>
       <div className="legal">
-        <p>© 2022 Copyright ArteRiego | Todos los derechos reservados</p>
-        <p>
-          <Link href="/">
-            <a aria-label="Políticas de privacidad ArteRiego">
-              Políticas de privacidad
-            </a>
-          </Link>
-            |
-          <Link href="/">
-            <a aria-label="Términos y condiciones ArteRiego">
-              Términos y condiciones
-            </a>
-          </Link>
-        </p>
+        <Wrapper>
+          <div className="legal__container">
+            <p>© 2022 Copyright ArteRiego | Todos los derechos reservados</p>
+            <p>
+              <Link href="/">
+                <a className="legal__links" aria-label="Políticas de privacidad ArteRiego">
+                  Políticas de privacidad
+                </a>
+              </Link>
+              {" | "}
+              <Link href="/">
+                <a className="legal__links" aria-label="Términos y condiciones ArteRiego">
+                  Términos y condiciones
+                </a>
+              </Link>
+            </p>
+          </div>
+        </Wrapper>
       </div>
     </FooterStyled>
   )

@@ -137,8 +137,8 @@ const AboutUs: React.FC<Props> = ({ title, text, image, className }) => {
               alt="Image"
               layout="fill"
               aria-label="Image"
-              height="500"
               objectFit="cover"
+              priority={false}
             />
             
             <div className="aboutUs__experience">

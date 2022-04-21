@@ -9,7 +9,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   width?: string | number
   loading?: boolean
   disabled?: boolean,
-  onClick: () => void
+  onClick?: () => void
 }
 
 const ButtonStyled = styled.button<ButtonProps>`

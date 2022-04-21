@@ -36,6 +36,6 @@ export const navLinks: NavLinkType[] = [
   {
     id: "005",
     name: "Contáctanos",
-    url: "/contact"
+    url: "/contacto"
   },
 ]

@@ -5,11 +5,11 @@ import styled from 'styled-components'
 import { ProjectType } from '@data/projects.data'
 import Image from 'next/image'
 
-const ProjectStyled = styled.article`
+const FeaturedProjectStyled = styled.article`
   height: 450px;
   position: relative;
 
-  .project__content {
+  .featuredProject__content {
     position: absolute;
     display: grid;
     align-items: flex-end;
@@ -19,16 +19,16 @@ const ProjectStyled = styled.article`
     box-shadow: 0px -85px 23px -20px rgba(0, 0, 0, 0.5) inset;
   }
 
-  .project__name {
+  .featuredProject__name {
     font-size: 20px;
     font-weight: 500;
     color: ${({ theme }) => theme.colors.secundaryLight};
   }
 `
 
-const Project: React.FC<ProjectType> = ({ id, name, image }) => {
+const FeaturedProject: React.FC<ProjectType> = ({ id, name, image }) => {
   return (
-    <ProjectStyled id={id}>
+    <FeaturedProjectStyled id={id}>
       {image &&
         <Image
           src={image}
@@ -39,11 +39,11 @@ const Project: React.FC<ProjectType> = ({ id, name, image }) => {
           priority={false}
         />
       }
-      <div className="project__content">
-        <h3 className="project__name">{name}</h3>
+      <div className="featuredProject__content">
+        <h3 className="featuredProject__name">{name}</h3>
       </div>
-    </ProjectStyled>
+    </FeaturedProjectStyled>
   )
 }
 
-export default Project
+export default FeaturedProject

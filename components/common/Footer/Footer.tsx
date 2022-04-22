@@ -58,7 +58,7 @@ const FooterStyled = styled.footer`
   .contactInfo__list {
     display: grid;
     gap: 3px;
-    li {
+    a {
       color: ${({ theme }) => theme.colors.secundaryLight};
     }
   }
@@ -142,9 +142,28 @@ const Footer: React.FC<Props> = () => {
           <div className="footer__contactInfo">
             <h3 className="footer__subTitle">Contáctanos</h3>
             <ul className="contactInfo__list">
-              <li>+04 603 6546</li>
-              <li>arteriego@hotmail.com</li>
-              <li>Metropolis II Etapa E Mz 1369 V 06</li>
+              <li>
+                <Link href="tel:+04 603 6546">
+                  <a>
+                    +04 603 6546
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="mailto:arteriego@hotmail.com">
+                  <a>
+                    arteriego@hotmail.com
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="https://www.google.com/maps?ll=-2.063393,-79.91684&z=17&t=m&hl=es&gl=EC&mapclient=embed&cid=14727954764109037702"
+                  target="_blank"
+                >
+                  Metropolis II Etapa E Mz 1369 V 06
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -170,13 +189,13 @@ const Footer: React.FC<Props> = () => {
           <div className="legal__container">
             <p>© 2022 Copyright ArteRiego | Todos los derechos reservados</p>
             <p>
-              <Link href="/">
+              <Link href="/privacidad">
                 <a className="legal__links" aria-label="Políticas de privacidad ArteRiego">
                   Políticas de privacidad
                 </a>
               </Link>
               {" | "}
-              <Link href="/">
+              <Link href="/terminos">
                 <a className="legal__links" aria-label="Términos y condiciones ArteRiego">
                   Términos y condiciones
                 </a>

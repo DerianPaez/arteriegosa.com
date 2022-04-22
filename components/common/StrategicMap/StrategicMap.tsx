@@ -4,6 +4,8 @@ import styled from 'styled-components'
 // Icons
 import Mision from '@components/icons/Mision'
 import Vision from '@components/icons/Vision'
+
+// Theme
 import { Paragraph } from '@config/themeConfig'
 
 type Props = {

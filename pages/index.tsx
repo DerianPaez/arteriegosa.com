@@ -261,6 +261,7 @@ const HomeStyled = styled.div`
   }
 
   .clients {
+    background-color: rgba(37, 114, 62, 0.08);
     .clients__container {
       display: grid;
       gap: 20px;

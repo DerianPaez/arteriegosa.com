@@ -114,6 +114,7 @@ const AboutStyled = styled.div`
   }
 
   .chooseUs {
+    background-color: rgba(37, 114, 62, 0.08);
     .chooseUs__container {
       display: grid;
       gap: 40px;

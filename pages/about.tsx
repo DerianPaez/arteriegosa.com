@@ -5,7 +5,7 @@ import styled from 'styled-components'
 // Theme
 import { H2, Paragraph } from '@config/themeConfig'
 
-// Data 
+// Data
 import { aboutUs } from '@data/aboutUs.data'
 
 // Components

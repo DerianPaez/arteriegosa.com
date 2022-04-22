@@ -140,7 +140,8 @@ const AboutStyled = styled.div`
 
   .team {
     .team__container {
-
+      display: grid;
+      gap: 40px;
     }
 
     .team__list {

@@ -7,9 +7,10 @@ import { H2, Paragraph } from '@config/themeConfig'
 
 // Data
 import { aboutUs } from '@data/aboutUs.data'
+import { team } from '@data/team.data'
 
 // Components
-import { Banner, Section, StrategicMap } from '@components/common'
+import { Banner, Section, StrategicMap, Teammate } from '@components/common'
 
 const AboutStyled = styled.div`
   .aboutUs {
@@ -43,7 +44,7 @@ const AboutStyled = styled.div`
       position: relative;
       grid-area: aboutImage;
       min-height: 350px;
-      
+
       img {
         border-radius: 10px;
       }
@@ -110,6 +111,35 @@ const AboutStyled = styled.div`
       }
     }
   }
+
+  .team {
+    .team__container {
+      display: grid;
+      gap: 40px;
+    }
+
+    .team__list {
+      display: grid;
+      gap: 40px;
+    }
+
+    @media (min-width: 768px) {
+      .team__title {
+        text-align: center;
+      }
+
+      .team__list {
+        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .team__list {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
 `
 
 const About: React.FC = () => {
@@ -134,20 +164,37 @@ const About: React.FC = () => {
           <div className="aboutUs__image">
             <div className="aboutUs__image__gradiant"></div>
 
-            {aboutUs.image && 
+            {aboutUs.image &&
               <Image
               src={aboutUs.image}
               alt="Image"
               layout="fill"
               aria-label="Image"
               objectFit="cover"
-              priority={false}
-            />}
-            
+              priority={true}
+              />
+            }
+
             <div className="aboutUs__experience">
               <p className="aboutUs__experience__year">29</p>
               <p className="aboutUs__experiece__text">años de experiencia</p>
             </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section className="team">
+        <div className="team__container">
+          <H2 className="team__title">{team.title}</H2>
+          <div className="team__list">
+            {team.teammates.map((temmate) => {
+              return (
+                <Teammate
+                  key={temmate.id}
+                  {...temmate}
+                />
+              )
+            })}
           </div>
         </div>
       </Section>

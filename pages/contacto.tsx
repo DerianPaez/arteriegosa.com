@@ -1,11 +1,13 @@
 import * as React from 'react'
 import * as Yup from 'yup'
-import { useFormik } from 'formik'
 import styled from 'styled-components'
+import { useFormik } from 'formik'
+
+// Theme
+import { H2 } from '@config/themeConfig'
 
 // Components
-import { Button, Input, Map, Section, Textarea } from '@components/common'
-import Select from '@components/common/Select/Select'
+import { Button, Input, Map, Section, Textarea, Select, Banner } from '@components/common'
 
 const ContactStyled = styled.div`
   .contact {
@@ -14,14 +16,13 @@ const ContactStyled = styled.div`
       gap: 20px;
     }
 
-    .contact__form {
-      display: grid;
-      gap: 20px;
+    .contact__form__title {
+      max-width: 320px;
     }
 
-    .contact__form__title {
-      font-size: 28px;
-      font-weight: 500;
+    .contact__form {
+      display: grid;
+      gap: 30px;
     }
 
     .form {
@@ -61,6 +62,7 @@ const ContactStyled = styled.div`
     @media (min-width: 768px) {
       .contact__container {
         grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
       }
 
       .form {
@@ -69,6 +71,8 @@ const ContactStyled = styled.div`
           "email service"
           "message message"
           "button .";
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
       }
     }
 
@@ -96,20 +100,24 @@ const Contact: React.FC = () => {
   const formik = useFormik({ initialValues, validationSchema, onSubmit })
   return (
     <ContactStyled>
+      <Banner
+        title="Contáctanos"
+      />
+
       <Section className="contact">
         <div className="contact__container">
           <div className="contact__form">
-            <h2 className="contact__form__title">Comunicate con nosotros</h2>
+            <H2 className="contact__form__title">Comunicate Con Nosotros</H2>
             <form className="form" action="" method="POST" onSubmit={formik.handleSubmit}>
-              <Input id="name" form={formik} className="input name" type="text" name="name" placeholder="Nombre" required />
-              <Input id="phone" form={formik} className="input phone" type="tel" name="phone" placeholder="Celular" required />
-              <Input id="email" form={formik} className="input email" type="email" name="email" placeholder="Correo electrónico" required />
+              <Input id="name" form={formik} className="input name" type="text" name="name" placeholder="Nombre" />
+              <Input id="phone" form={formik} className="input phone" type="tel" name="phone" placeholder="Celular" />
+              <Input id="email" form={formik} className="input email" type="email" name="email" placeholder="Correo electrónico" />
               <Select className="select service" defaultValue={"DEFAULT"}>
                 <option selected hidden value="DEFAULT" label="Servicio" />
                 <option value="Sistema de riego" label="Sistema de riego" />
                 <option value="Areas verdes" label="Areas Verdes" />
               </Select>
-              <Textarea className="textarea message" placeholder="Mensaje" rows={5} required />
+              <Textarea id="message" form={formik} className="textarea message" name="message" placeholder="Mensaje" rows={5} />
               <Button className="button" type="submit">Enviar</Button>
             </form>
           </div>

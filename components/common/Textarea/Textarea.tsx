@@ -13,10 +13,23 @@ const TextareaStyled = styled.textarea`
     color: ${({ theme }) => theme.colors.primary};
   }
 `
+interface FormikTextareaType extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  name: string
+  form: any
+}
 
-const Textarea: React.FC<React.TextareaHTMLAttributes<HTMLTextAreaElement>> = ({ children, ...props }) => {
+const Textarea: React.FC<FormikTextareaType> = ({ children, form, ...props }) => {
+  const { name } = props
+  const error = form.errors[name]
+  const touched = form.touched[name]
   return (
-    <TextareaStyled { ...props }>{children}</TextareaStyled>
+    <TextareaStyled
+      onChange={form.handleChange}
+      value={form.values[name]}
+      { ...props }
+    >
+      {children}
+    </TextareaStyled>
   )
 }
 

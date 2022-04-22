@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { hero as heroData } from '@data/hero.data'
 import { services as serviceData } from '@data/services.data'
 import { productsRainbird as productList } from '@data/productsRainbird.data'
-import { projects as projectsData } from '@data/projects.data'
+import { projects as projectsData, ProjectType } from '@data/projects.data'
 import { clients as clientsData } from '@data/clients.data'
 
 // Components
@@ -309,6 +309,9 @@ const HomeStyled = styled.div`
 `
 
 const Home: React.FC = () => {
+  const filterByProjectImportance = (project: ProjectType) => project.importance
+  const featuredProjects: ProjectType[] = projectsData.filter(filterByProjectImportance)
+
   const lastProduct = productList.length - 1
   const [product, setProduct] = React.useState(0)
   const nextProduct = () => {
@@ -410,7 +413,7 @@ const Home: React.FC = () => {
         <div className="featuredProjects__container">
           <h2 className="featuredProjects__title">Proyectos Destacados</h2>
           <div className="featuredProjects__list">
-            {projectsData.map((project) => {
+            {featuredProjects.map((project) => {
               return (
                 <FeaturedProject
                   key={project.id}

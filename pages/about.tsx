@@ -8,14 +8,10 @@ import { H2, Paragraph } from '@config/themeConfig'
 // Data
 import { aboutUs } from '@data/aboutUs.data'
 import { team } from '@data/team.data'
+import { chooseUs } from '@data/chooseUs.data'
 
 // Components
-<<<<<<< HEAD
-import { Banner, Section, StrategicMap, Teammate } from '@components/common'
-=======
-import { Banner, ChooseUsItem, Section, StrategicMap } from '@components/common'
-import { chooseUs } from '@data/chooseUs.data'
->>>>>>> 43dd1a862743ef72cbe183aadf2c268bb28030d4
+import { Banner, Section, StrategicMap, Teammate, ChooseUsItem } from '@components/common'
 
 const AboutStyled = styled.div`
   .aboutUs {
@@ -117,18 +113,36 @@ const AboutStyled = styled.div`
     }
   }
 
-<<<<<<< HEAD
-  .team {
-    .team__container {
-=======
   .chooseUs {
     .chooseUs__container {
->>>>>>> 43dd1a862743ef72cbe183aadf2c268bb28030d4
       display: grid;
       gap: 40px;
     }
 
-<<<<<<< HEAD
+    .chooseUs__list {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .chooseUs__title__h2 {
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .chooseUs__list {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 10%;
+      }
+    }
+  }
+
+  .team {
+    .team__container {
+
+    }
+
     .team__list {
       display: grid;
       gap: 40px;
@@ -148,23 +162,6 @@ const AboutStyled = styled.div`
     @media (min-width: 1024px) {
       .team__list {
         grid-template-columns: repeat(4, 1fr);
-=======
-    .chooseUs__list {
-      display: grid;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .chooseUs__title__h2 {
-      text-align: center;
-    }
-
-    @media (min-width: 768px) {
-      .chooseUs__list{
-        grid-template-columns: 1fr 1fr;
-        gap: 40px 10%;
->>>>>>> 43dd1a862743ef72cbe183aadf2c268bb28030d4
       }
     }
   }
@@ -211,7 +208,19 @@ const About: React.FC = () => {
         </div>
       </Section>
 
-<<<<<<< HEAD
+      <Section className="chooseUs">
+        <div className="chooseUs__container">
+          <H2 className="chooseUs__title__h2">{chooseUs.title}</H2>
+          <div className="chooseUs__list">
+            {chooseUs.chooseUsList.map((item) => {
+              return (
+                <ChooseUsItem key={item.id} icon={item.icon} title={item.title} text={item.text} />
+              )
+            })}
+          </div>
+        </div>
+      </Section>
+
       <Section className="team">
         <div className="team__container">
           <H2 className="team__title">{team.title}</H2>
@@ -222,15 +231,6 @@ const About: React.FC = () => {
                   key={temmate.id}
                   {...temmate}
                 />
-=======
-      <Section className="chooseUs">
-        <div className="chooseUs__container">
-          <H2 className="chooseUs__title__h2">{chooseUs.title}</H2>
-          <div className="chooseUs__list">
-            {chooseUs.chooseUsList.map((item) => {
-              return (
-                <ChooseUsItem key={item.id} icon={item.icon} title={item.title} text={item.text} />
->>>>>>> 43dd1a862743ef72cbe183aadf2c268bb28030d4
               )
             })}
           </div>

@@ -10,7 +10,12 @@ import { aboutUs } from '@data/aboutUs.data'
 import { team } from '@data/team.data'
 
 // Components
+<<<<<<< HEAD
 import { Banner, Section, StrategicMap, Teammate } from '@components/common'
+=======
+import { Banner, ChooseUsItem, Section, StrategicMap } from '@components/common'
+import { chooseUs } from '@data/chooseUs.data'
+>>>>>>> 43dd1a862743ef72cbe183aadf2c268bb28030d4
 
 const AboutStyled = styled.div`
   .aboutUs {
@@ -84,13 +89,13 @@ const AboutStyled = styled.div`
     .aboutUs__experience__year {
       font-size: 45px;
       font-weight: 500;
-      color: ${({ theme }) => theme.colors.secundaryLight}
+      color: ${({ theme }) => theme.colors.secundaryLight};
     }
 
     .aboutUs__experiece__text {
       font-size: 20px;
       text-transform: uppercase;
-      color: ${({ theme }) => theme.colors.secundaryLight}
+      color: ${({ theme }) => theme.colors.secundaryLight};
     }
 
     @media (min-width: 768px) {
@@ -112,12 +117,18 @@ const AboutStyled = styled.div`
     }
   }
 
+<<<<<<< HEAD
   .team {
     .team__container {
+=======
+  .chooseUs {
+    .chooseUs__container {
+>>>>>>> 43dd1a862743ef72cbe183aadf2c268bb28030d4
       display: grid;
       gap: 40px;
     }
 
+<<<<<<< HEAD
     .team__list {
       display: grid;
       gap: 40px;
@@ -137,6 +148,23 @@ const AboutStyled = styled.div`
     @media (min-width: 1024px) {
       .team__list {
         grid-template-columns: repeat(4, 1fr);
+=======
+    .chooseUs__list {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .chooseUs__title__h2 {
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .chooseUs__list{
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 10%;
+>>>>>>> 43dd1a862743ef72cbe183aadf2c268bb28030d4
       }
     }
   }
@@ -157,8 +185,8 @@ const About: React.FC = () => {
               <Paragraph>{aboutUs.text}</Paragraph>
             </div>
             <div className="strategicMap__container">
-              <StrategicMap icon="Mision" title="Misión" text="Asesorar, Diseñar, Suministrar, Instalar y dar mantenimiento a Sistemas de Riego Automáticos para áreas verdes en distintos sectores, para la aplicación del recurso hídrico con miras a satisfacer las necesidades específicas de los proyectos de cada uno de nuestros clientes"/>
-              <StrategicMap icon="Vision" title="Visión" text="Orientar nuestra actividad al posicionamiento de ARTERIEGO S.A. Como líder en el mercado de soluciones tecnológicas para el uso inteligente del agua en sus diferentes usos en los sectores públicos o privados"/>
+              <StrategicMap icon="Mision" title={aboutUs.strategicMaps.mision.title} text={aboutUs.strategicMaps.mision.text}/>
+              <StrategicMap icon="Vision" title={aboutUs.strategicMaps.vision.title} text={aboutUs.strategicMaps.vision.text}/>
             </div>
           </div>
           <div className="aboutUs__image">
@@ -176,13 +204,14 @@ const About: React.FC = () => {
             }
 
             <div className="aboutUs__experience">
-              <p className="aboutUs__experience__year">29</p>
-              <p className="aboutUs__experiece__text">años de experiencia</p>
+              <p className="aboutUs__experience__year">{aboutUs.experience.year}</p>
+              <p className="aboutUs__experiece__text">{aboutUs.experience.text}</p>
             </div>
           </div>
         </div>
       </Section>
 
+<<<<<<< HEAD
       <Section className="team">
         <div className="team__container">
           <H2 className="team__title">{team.title}</H2>
@@ -193,6 +222,15 @@ const About: React.FC = () => {
                   key={temmate.id}
                   {...temmate}
                 />
+=======
+      <Section className="chooseUs">
+        <div className="chooseUs__container">
+          <H2 className="chooseUs__title__h2">{chooseUs.title}</H2>
+          <div className="chooseUs__list">
+            {chooseUs.chooseUsList.map((item) => {
+              return (
+                <ChooseUsItem key={item.id} icon={item.icon} title={item.title} text={item.text} />
+>>>>>>> 43dd1a862743ef72cbe183aadf2c268bb28030d4
               )
             })}
           </div>

@@ -16,6 +16,10 @@ export { default as Input } from './Input'
 export { default as Textarea } from './Textarea'
 export { default as Banner } from './Banner'
 export { default as StrategicMap } from './StrategicMap'
+<<<<<<< HEAD
 export { default as Select } from './Select'
 export { default as Project } from './Project'
 export { default as Teammate } from './Teammate'
+=======
+export { default as ChooseUsItem } from './ChooseUsItem'
+>>>>>>> 43dd1a862743ef72cbe183aadf2c268bb28030d4

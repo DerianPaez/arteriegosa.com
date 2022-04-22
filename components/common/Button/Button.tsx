@@ -24,7 +24,7 @@ const ButtonStyled = styled.button<ButtonProps>`
   color: ${({ theme }) => theme.colors.secundaryLight};
   width: ${({ width }) => width ? `${width}px` : 'max-content'};
   background-color: ${({ theme }) => theme.colors.primary};
-
+  overflow: hidden;
 `
 
 const Button: React.FC<ButtonProps> = ({
@@ -50,9 +50,6 @@ const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
     >
       {children}
-      {loading &&
-        <span>Cargando</span>
-      }
     </ButtonStyled>
   )
 }

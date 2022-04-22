@@ -21,7 +21,7 @@ export const navLinks: NavLinkType[] = [
   {
     id: "002",
     name: "Nosotros",
-    url: "/about"
+    url: "/nosotros"
   },
   {
     id: "003",

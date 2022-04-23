@@ -1,9 +1,4 @@
-type HandlerType = {
-  req: any
-  res: any
-}
-
-export default function handler({req, res}: HandlerType) {
+export default (req: any, res: any) => {
   // Get data submitted in request's body.
   const body = req.body
 
@@ -13,9 +8,9 @@ export default function handler({req, res}: HandlerType) {
 
   // Guard clause checks for first and last name,
   // and returns early if they are not found
-  if (!body.first || !body.last) {
+  if (!body) {
     // Sends a HTTP bad request error code
-    return res.status(400).json({ data: 'First or last name not found' })
+    return res.status(400).json({ data: 'Envio de correo invalido' })
   }
 
   // Found the name.

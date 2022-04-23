@@ -93,8 +93,12 @@ const Contact: React.FC = () => {
     service: Yup.string(),
     message: Yup.string()
   })
-  const onSubmit = (values: any, actions: any) => {
+  const onSubmit = async (values: any, actions: any) => {
     console.log(values)
+    fetch('/api/form', {
+      method: 'POST',
+      body: JSON.stringify(values)
+    })
     // actions.resetForm()
   }
   const formik = useFormik({ initialValues, validationSchema, onSubmit })
@@ -112,11 +116,16 @@ const Contact: React.FC = () => {
               <Input id="name" form={formik} className="input name" type="text" name="name" placeholder="Nombre" />
               <Input id="phone" form={formik} className="input phone" type="tel" name="phone" placeholder="Celular" />
               <Input id="email" form={formik} className="input email" type="email" name="email" placeholder="Correo electrónico" />
-              <Select className="select service" defaultValue={"DEFAULT"}>
-                <option selected hidden value="DEFAULT" label="Servicio" />
-                <option value="Sistema de riego" label="Sistema de riego" />
-                <option value="Areas verdes" label="Areas Verdes" />
-              </Select>
+              <Select
+                id="service"
+                className="select service"
+                name="service"
+                form={formik}
+                options={[
+                  { id: "001", label: "Sistema de riego", value:"Sistema de riego" },
+                  { id: "002", label: "Areas verdes", value:"Areas verdes" },
+                ]}
+              />
               <Textarea id="message" form={formik} className="textarea message" name="message" placeholder="Mensaje" rows={5} />
               <Button className="button" type="submit">Enviar</Button>
             </form>

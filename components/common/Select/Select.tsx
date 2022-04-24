@@ -43,13 +43,17 @@ const SelectStyled = styled(ReactSelect)`
     }
   }
 
+  .react__select__placeholder{
+    color: ${({ theme }) => theme.colors.primary};
+  }
+
   .react__select__option:active {
     background-color: rgba(37, 114, 62, 0.3);
   }
 
   .react__select__option--is-focused {
-      background: rgba(37, 114, 62, 0.3);
-    }
+    background: rgba(37, 114, 62, 0.3);
+  }
 
   .react__select__option--is-selected {
     background-color: ${({ theme }) => theme.colors.primary};

@@ -51,6 +51,7 @@ const ContactStyled = styled.div`
     .contact__map {
       width: 100%;
       height: 100%;
+      min-height: 150px;
     }
 
     .map {
@@ -118,6 +119,7 @@ const Contact: React.FC = () => {
               <Input id="email" form={formik} className="input email" type="email" name="email" placeholder="Correo electrónico" />
               <Select
                 id="service"
+                placeholder="Servicios"
                 className="select service"
                 name="service"
                 form={formik}

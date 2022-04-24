@@ -21,11 +21,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   const store = initStore()
   const [isLoading, setIsLoading] = React.useState(false)
 
-  Router.events.on("routeChangeStart", () => {setIsLoading(true)})
-  Router.events.on("routeChangeComplete", () => {setIsLoading(false)})
-
   React.useEffect(() => {
-    setTimeout(() => setIsLoading(true), 3000)
+    const interval = setTimeout(() => setIsLoading(true), 4000)
+    return () => clearTimeout(interval)
   })
 
   return (

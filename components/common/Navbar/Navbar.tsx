@@ -34,7 +34,7 @@ const NavbarStyled = styled.nav<StyledProps>`
   .navbar__container {
     height: 100%;
     display: grid;
-    align-content: space-between;
+    grid-template-rows: 1fr max-content;
     padding: 40px 0 20px;
   }
 
@@ -42,7 +42,10 @@ const NavbarStyled = styled.nav<StyledProps>`
     height: max-content;
     display: grid;
     grid-auto-rows: max-content;
-    gap: 20px;
+    gap: 30px;
+    text-align: center;
+    align-self: center;
+    margin-bottom: 42px;
   }
 
   .navbar__socialMedia {
@@ -51,12 +54,18 @@ const NavbarStyled = styled.nav<StyledProps>`
     grid-auto-columns: max-content;
     grid-auto-flow: column;
     gap: 20px;
+    justify-self: center;
   }
 
   .navbar__socialMedia a {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: .2s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 
   .navbar__socialMedia svg {
@@ -75,12 +84,14 @@ const NavbarStyled = styled.nav<StyledProps>`
       justify-content: space-between;
       align-items: center;
       padding: 16px 0;
+      grid-template-rows: auto;
     }
 
     ul {
       grid-auto-flow: column;
       grid-auto-columns: max-content;
-      margin-top: 0px;
+      margin-top: 0;
+      margin-bottom: 0;
       gap: 40px;
     }
   }

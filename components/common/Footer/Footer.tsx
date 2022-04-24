@@ -60,6 +60,10 @@ const FooterStyled = styled.footer`
     gap: 3px;
     a {
       color: ${({ theme }) => theme.colors.secundaryLight};
+
+      &:hover {
+        color: #d4d4d4;
+      }
     }
   }
 
@@ -84,6 +88,15 @@ const FooterStyled = styled.footer`
     gap: 20px;
   }
 
+  .socialMedia__list {
+    a {
+      transition: .2s;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
   .legal {
     padding: 20px 0;
     background-color: #042710;
@@ -103,6 +116,10 @@ const FooterStyled = styled.footer`
   .legal__links {
     color: ${({ theme }) => theme.colors.secundaryLight};
     font-size: 14px;
+
+    &:hover {
+      color: #d4d4d4;
+    }
   }
 
   @media (min-width: 768px) {

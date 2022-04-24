@@ -12,8 +12,13 @@ type Props = {
 
 const NavlinkStyled = styled.li`
   a {
-    font-size: 18px;
+    font-size: 20px;
     color: ${({ theme }) => theme.colors.secundaryLight};
+    transition: color .2s;
+
+    &:hover {
+      color: #d4d4d4;
+    }
   }
 `
 

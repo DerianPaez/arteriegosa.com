@@ -12,7 +12,7 @@ type Props = {
 }
 
 const SectionStyled = styled.section<StyledProps>`
-  padding: 80px 0;
+  padding: 70px 0;
 `
 
 const Section: React.FC<Props> = ({ children, ...props }) => {

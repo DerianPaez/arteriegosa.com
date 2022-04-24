@@ -96,11 +96,12 @@ const Contact: React.FC = () => {
   })
   const onSubmit = async (values: any, actions: any) => {
     console.log(values)
-    fetch('/api/form', {
-      method: 'POST',
-      body: JSON.stringify(values)
-    })
-    // actions.resetForm()
+    alert('El envio de dicha información se realizará cuando la página esté publicada.')
+    actions.resetForm()
+    // fetch('/api/form', {
+    //   method: 'POST',
+    //   body: JSON.stringify(values)
+    // })
   }
   const formik = useFormik({ initialValues, validationSchema, onSubmit })
   return (

@@ -25,6 +25,11 @@ const ButtonStyled = styled.button<ButtonProps>`
   width: ${({ width }) => width ? `${width}px` : 'max-content'};
   background-color: ${({ theme }) => theme.colors.primary};
   overflow: hidden;
+  transition: background-color .2s;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.secundaryDark};
+  }
 `
 
 const Button: React.FC<ButtonProps> = ({

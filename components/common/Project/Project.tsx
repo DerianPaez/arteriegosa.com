@@ -19,11 +19,11 @@ const ProjectStyled = styled.div<ProjectType>`
     height: 100%;
     padding: 15px 20px;
     box-shadow: 0px -85px 23px -20px rgba(0, 0, 0, 0.5) inset;
-    transition: 3s;
-    background: linear-gradient(to right,rgba(37,114,62,0.3),rgba(37,114,62,0.3));
+    transition: 0.2s;
+    background-color: rgba(37,114,62,0.3);
 
     &:hover {
-      background: linear-gradient(to right,rgba(37,114,62,0),rgba(37,114,62,0));
+      background-color: transparent;
     }
   }
 

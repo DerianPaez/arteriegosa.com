@@ -8,6 +8,7 @@ const LoaderStyled = styled.section`
   justify-content: center;
   align-items: center;
   text-align: center;
+  font-size: 40px;
 `
 
 const Loader: React.FC = () => {

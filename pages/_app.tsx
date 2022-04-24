@@ -25,7 +25,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   Router.events.on("routeChangeComplete", () => {setIsLoading(false)})
 
   React.useEffect(() => {
-    setTimeout(() => setIsLoading(true), 1000)
+    setTimeout(() => setIsLoading(true), 3000)
   })
 
   return (

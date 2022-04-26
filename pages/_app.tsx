@@ -21,7 +21,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   const [isLoading, setIsLoading] = React.useState(false)
 
   React.useEffect(() => {
-    const interval = setTimeout(() => setIsLoading(true), 4000)
+    const interval = setTimeout(() => setIsLoading(true), 2000)
     return () => clearTimeout(interval)
   })
 

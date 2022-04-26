@@ -1,5 +1,4 @@
 import * as React from 'react'
-import Router from 'next/router'
 import { Provider } from 'react-redux'
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'

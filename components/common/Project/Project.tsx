@@ -20,7 +20,7 @@ const ProjectStyled = styled.div<ProjectType>`
     padding: 15px 20px;
     box-shadow: 0px -85px 23px -20px rgba(0, 0, 0, 0.5) inset;
     transition: 0.2s;
-    background-color: rgba(37,114,62,0.3);
+    background-color: rgb(0 0 0 / 13%);
 
     &:hover {
       background-color: transparent;
@@ -61,7 +61,6 @@ const Project: React.FC<ProjectType> = ({ ...props }) => {
         <div className="project__content__container">
           <h3 className="project__name">{name}</h3>
           <hr />
-          <p className="project__date">{date}</p>
         </div>
       </div>
     </ProjectStyled>

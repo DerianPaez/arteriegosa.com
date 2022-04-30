@@ -497,7 +497,7 @@ const Home: React.FC = () => {
           <div className="verticalsGardens__images">
             {verticalGardens.images.map((garden, i) => {
               return (
-                <figure className={`image__${i + 1}`}>
+                <figure key={garden.id} className={`image__${i + 1}`}>
                   <Image
                     src={garden.image.url}
                     alt={garden.name}

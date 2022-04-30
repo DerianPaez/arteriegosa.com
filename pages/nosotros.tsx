@@ -145,25 +145,26 @@ const AboutStyled = styled.div`
       gap: 40px;
     }
 
+    .team__title {
+        text-align: center;
+      }
+
     .team__list {
       display: grid;
       gap: 40px;
     }
 
-    @media (min-width: 768px) {
-      .team__title {
-        text-align: center;
-      }
-
+    @media (min-width: 550px) {
       .team__list {
         gap: 20px;
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 768px) {
       .team__list {
-        grid-template-columns: repeat(4, 1fr);
+        justify-self: center;
+        grid-template-columns: repeat(2, 335px);
       }
     }
   }

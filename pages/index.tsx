@@ -21,6 +21,9 @@ import {
 // Icons
 import ArrowLeft from '@components/icons/ArrowLeft'
 import ArrowRight from '@components/icons/ArrowRight'
+import { verticalGardens } from '@data/verticalGardens.data'
+import { H2, Paragraph } from '@config/themeConfig'
+import { getImageSize } from 'next/dist/server/image-optimizer'
 
 const HomeStyled = styled.div`
   .hero {
@@ -260,6 +263,65 @@ const HomeStyled = styled.div`
     }
   }
 
+  .verticalGardens {
+    .verticalGardens__header {
+      display: grid;
+      gap: 20px;
+
+      p {
+        font-size: 20px;
+        justify-self: center;
+      }
+    }
+
+    .verticalGardens__container {
+      display: grid;
+      gap: 20px;
+    }
+
+    .verticalsGardens__images {
+      position: relative;
+      height: 350px;
+      margin-bottom: 70px;
+      transition: 1s;
+
+      &:hover .image__1 {
+        transform: translate(1000px);
+      }
+
+      &:hover .image__2 {
+        transform: translateX(100px) scale(1.2);
+        z-index: 101;
+      }
+    }
+
+    .image__1 {
+      position: absolute;
+      top: 20%;
+      right: 0;
+      width: 80%;
+      height: 100%;
+      z-index: 100;
+      transition: 1s;
+    }
+
+    .image__2 {
+      position: absolute;
+      left: 0;
+      width: 60%;
+      height: 100%;
+      z-index: 99;
+      transition: 1s;
+    }
+
+    @media (min-width: 768px) {
+      .verticalGardens__container {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+      }
+    }
+  }
+
   .clients {
     background-color: rgba(37, 114, 62, 0.08);
     .clients__container {
@@ -422,6 +484,39 @@ const Home: React.FC = () => {
                 />
               )
             })}
+          </div>
+        </div>
+      </Section>
+
+      <Section className="verticalGardens">
+        <div className="verticalGardens__container">
+          <div className="verticalGardens__header">
+            <H2>{verticalGardens.title}</H2>
+            <Paragraph>{verticalGardens.description}</Paragraph>
+          </div>
+          <div className="verticalsGardens__images">
+            {verticalGardens.images.map((garden, i) => {
+              return (
+                <figure className={`image__${i + 1}`}>
+                  <Image
+                    src={garden.image.url}
+                    alt={garden.name}
+                    aria-label="Image"
+                    width={garden.image.size.width}
+                    height={garden.image.size.height}
+                    objectFit="cover"
+                    layout="fill"
+                    priority={false}
+                  />
+                </figure>
+              )
+            })}
+            {/* <figure className={`image__1`}>
+              <img src={verticalGardens.images[0].image.url} alt={verticalGardens.images[0].name} />
+            </figure>
+            <figure className={`image__2`}>
+              <img src={verticalGardens.images[1].image.url} alt={verticalGardens.images[1].name} />
+            </figure> */}
           </div>
         </div>
       </Section>

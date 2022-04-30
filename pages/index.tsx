@@ -24,6 +24,7 @@ import ArrowRight from '@components/icons/ArrowRight'
 import { verticalGardens } from '@data/verticalGardens.data'
 import { H2, Paragraph } from '@config/themeConfig'
 import { getImageSize } from 'next/dist/server/image-optimizer'
+import Link from 'next/link'
 
 const HomeStyled = styled.div`
   .hero {
@@ -399,7 +400,7 @@ const Home: React.FC = () => {
         <div className="hero__content">
           <h2 className='hero__title'>{heroData.headline}</h2>
           <p className='hero__description'>{heroData.description}</p>
-          <Button onClick={() => {}}>Cotizar</Button>
+          <Button href="/contacto">{heroData.button}</Button>
         </div>
       </Section>
 

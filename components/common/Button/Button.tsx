@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import * as React from 'react'
 import styled from 'styled-components'
 
@@ -43,6 +44,24 @@ const Button: React.FC<ButtonProps> = ({
   disabled,
   onClick,
 }) => {
+
+  if(href) {
+    return (
+      <Link href={href}>
+        <ButtonStyled
+          aria-pressed={active}
+          className={className}
+          disabled={disabled}
+          width={width}
+          type={type}
+          loading={loading}
+        >
+          {children}
+        </ButtonStyled>
+      </Link>
+    )
+  }
+
   return (
     <ButtonStyled
       aria-pressed={active}
@@ -51,7 +70,6 @@ const Button: React.FC<ButtonProps> = ({
       width={width}
       type={type}
       loading={loading}
-      href={href}
       onClick={onClick}
     >
       {children}

@@ -8,6 +8,7 @@ import { H2 } from '@config/themeConfig'
 
 // Components
 import { Button, Input, Map, Section, Textarea, Select, Banner } from '@components/common'
+import { contactData } from '@data/contact.data'
 
 const ContactStyled = styled.div`
   .contact {
@@ -92,16 +93,32 @@ const Contact: React.FC = () => {
     phone: Yup.string().min(9).max(10),
     email: Yup.string().email('Correo Invalido'),
     service: Yup.string(),
-    message: Yup.string()
+    message: Yup.string().required('El mensaje es Obligatorio')
   })
-  const onSubmit = async (values: any, actions: any) => {
-    console.log(values)
-    alert('El envio de dicha información se realizará cuando la página esté publicada.')
+  const onSubmit = (values: any, actions: any) => {
+    let message = ""
+
+    function* spanishKey() {
+      yield 'Nombres'
+      yield 'Celular'
+      yield 'Email'
+      yield 'Servicio'
+      yield 'Mensaje'
+    }
+
+    const spanishKeyGenerator = spanishKey()
+
+    for(let value of Object.values(values)) {
+      const key = spanishKeyGenerator.next().value
+      if(value !== "") {
+        message += `*${key}*: ${value}\n`
+      }
+    }
+    message += `\nEnviado desde arteriegosa.com`
+
+    const url = `https://wa.me/${contactData.cellphone}?text=${encodeURI(message)}`
+    window.open(url, '_blank');
     actions.resetForm()
-    // fetch('/api/form', {
-    //   method: 'POST',
-    //   body: JSON.stringify(values)
-    // })
   }
   const formik = useFormik({ initialValues, validationSchema, onSubmit })
   return (
@@ -113,9 +130,9 @@ const Contact: React.FC = () => {
       <Section className="contact">
         <div className="contact__container">
           <div className="contact__form">
-            <H2 className="contact__form__title">Comunicate Con Nosotros</H2>
+            <H2 className="contact__form__title">{contactData.title}</H2>
             <form className="form" action="" method="POST" onSubmit={formik.handleSubmit}>
-              <Input id="name" form={formik} className="input name" type="text" name="name" placeholder="Nombre" />
+              <Input id="name" form={formik} className="input name" type="text" name="name" placeholder="Nombres" />
               <Input id="phone" form={formik} className="input phone" type="tel" name="phone" placeholder="Celular" />
               <Input id="email" form={formik} className="input email" type="email" name="email" placeholder="Correo electrónico" />
               <Select
@@ -124,10 +141,7 @@ const Contact: React.FC = () => {
                 className="select service"
                 name="service"
                 form={formik}
-                options={[
-                  { id: "001", label: "Sistema de riego", value:"Sistema de riego" },
-                  { id: "002", label: "Areas verdes", value:"Areas verdes" },
-                ]}
+                options={contactData.serviceList}
               />
               <Textarea id="message" form={formik} className="textarea message" name="message" placeholder="Mensaje" rows={5} />
               <Button className="button" type="submit">Enviar</Button>

@@ -31,13 +31,13 @@ export const services: ServicesType = {
     {
       id: "003",
       name: "Mantenimiento",
-      description: "Contamos con los recursos necesarios para efectuar el montaje de cada uno de los proyectos diseñados, de igual forma Ofrecemos servicios de mantenimiento preventivo y correctivo.",
+      description: "Ofrecemos servicios de mantenimiento preventivo y correctivo.",
       icon: "Maintenance"
     },
     {
       id: "004",
       name: "Suministro",
-      description: "Gracias a la alianza comercial y técnica con RainBird Internacional, estamos en capacidad de ofrecer totalmente los suministros específicamente calculados y diseñados para su proyecto de riego de áreas Verdes. ",
+      description: "Ofrecemos suministros específicamente calculados para su proyecto gracias a RainBird Internacional.",
       icon: "Supply"
     },
   ]

@@ -23,6 +23,10 @@ const Input: React.FC<FormikInputType> = ({ form, ...props }) => {
   const { name } = props
   const error = form.errors[name]
   const touched = form.touched[name]
+  if(touched && error) {
+    console.log(error)
+    console.log(touched)
+  }
   return (
     <InputStyled
       onChange={form.handleChange}

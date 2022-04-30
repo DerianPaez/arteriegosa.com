@@ -19,25 +19,25 @@ export const services: ServicesType = {
     {
       id: "001",
       name: "Asesoría",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      description: "Atención en sus inquietudes y necesidades aclarando los conceptos que debe tener para iniciar su proyecto",
       icon: "Advisory"
     },
     {
       id: "002",
       name: "Diseño",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      description: "Estudio que contenga la solución tecnológica adecuada para suplir las necesidades hídricas de su proyecto.",
       icon: "Design"
     },
     {
       id: "003",
       name: "Mantenimiento",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      description: "Contamos con los recursos necesarios para efectuar el montaje de cada uno de los proyectos diseñados, de igual forma Ofrecemos servicios de mantenimiento preventivo y correctivo.",
       icon: "Maintenance"
     },
     {
       id: "004",
       name: "Suministro",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      description: "Gracias a la alianza comercial y técnica con RainBird Internacional, estamos en capacidad de ofrecer totalmente los suministros específicamente calculados y diseñados para su proyecto de riego de áreas Verdes. ",
       icon: "Supply"
     },
   ]

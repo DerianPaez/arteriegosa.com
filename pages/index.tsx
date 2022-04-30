@@ -30,7 +30,7 @@ const HomeStyled = styled.div`
     align-items: center;
     padding: 0 ;
     background-image: linear-gradient(to right, rgb(0 0 0 / 59%), rgba(37, 114, 62, 0.3)), url('/assets/BackgroundHero.png');
-    background-position: left;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 

@@ -16,28 +16,28 @@ export const clients: ClientsType = {
   clientList: [
     {
       id: "001",
-      name: "Name",
-      image: "/assets/clients/rec.png",
+      name: "Villa del rey",
+      image: "/assets/clients/VillaDelRey.png",
     },
     {
       id: "002",
-      name: "Name",
-      image: "/assets/clients/rec.png",
+      name: "LFG",
+      image: "/assets/clients/LFG.png",
     },
     {
       id: "003",
       name: "Name",
-      image: "/assets/clients/rec.png",
+      image: "/assets/clients/CiudadCeleste.png",
     },
     {
       id: "004",
       name: "Name",
-      image: "/assets/clients/rec.png",
+      image: "/assets/clients/ClubSportEmelec.png",
     },
     {
       id: "005",
       name: "Name",
-      image: "/assets/clients/rec.png",
+      image: "/assets/clients/LaJoya.png",
     },
   ]
 }

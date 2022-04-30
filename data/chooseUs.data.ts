@@ -5,28 +5,25 @@ export const chooseUs = {
       id: '001',
       icon: 'Commitment',
       title: 'Compromiso',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.'
+      text: 'Eficiencia - Profesionalismo - Seriedad'
     },
-  
     {
       id: '002',
       icon: 'Quality',
       title: 'Servicio de calidad',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.'
+      text: 'Asistencia a nuestros clientes de la mejor manera'
     },
-  
     {
       id: '003',
       icon: 'Orientation',
       title: 'Orientación al cliente',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.'
+      text: 'Utilizando productos de alto rendimiento y reconocimiento a nivel mundial'
     },
-  
     {
       id: '004',
       icon: 'Puntuality',
       title: 'Putualidad',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.'
+      text: 'Cumpliendo con las obras en los tiempos acordados'
     }
   ]
 }

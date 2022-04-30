@@ -5,6 +5,7 @@ import Image from 'next/image'
 // Data
 import { TeammateType } from '@data/team.data'
 import { Paragraph } from '@config/themeConfig'
+import Man from '@components/icons/Man'
 
 const TeammateStyled = styled.div`
   display: grid;
@@ -14,6 +15,7 @@ const TeammateStyled = styled.div`
     display: grid;
     padding: 7px 0;
     border-bottom: 1px solid ${({ theme }) => theme.colors.primary};
+    text-align: center;
   }
 
   .teammate__name {
@@ -28,33 +30,22 @@ const TeammateStyled = styled.div`
     font-weight: 500;
   }
 
-  .teammate__photo {
-    position: relative;
+  .teammate__icon {
+    justify-self: center;
     height: 100%;
-    min-height: 450px;
   }
 `
 
 const Teammate: React.FC<TeammateType> = ({ ...props }) => {
-  const { names, position, photo } = props
+  const { names, position } = props
   return (
     <TeammateStyled>
+      <div className="teammate__icon">
+        <Man />
+      </div>
       <div className="teammate__content">
         <h3 className="teammate__name">{names}</h3>
         <Paragraph className="teammate__position">{position}</Paragraph>
-      </div>
-      <div className="teammate__photo">
-        {photo &&
-          <Image
-            src={photo}
-            alt={names}
-            aria-label={names}
-            layout="fill"
-            objectFit="cover"
-            priority={true}
-            objectPosition="top"
-          />
-        }
       </div>
     </TeammateStyled>
   )

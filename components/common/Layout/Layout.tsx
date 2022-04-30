@@ -21,6 +21,7 @@ const LayoutStyles = styled.div<StyledProps>`
 
   main {
     padding-top: 62px;
+    overflow: hidden;
   }
 
   @media (min-width: 768px) {

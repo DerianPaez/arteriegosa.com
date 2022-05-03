@@ -15,6 +15,7 @@ import Link from 'next/link';
 import Instagram from '@components/icons/Instagram';
 import WhatsApp from '@components/icons/WhatsApp';
 import useUi from '@hooks/useUi';
+import { socialMedia } from '@data/socialMedia.data';
 
 type StyledProps = {
   isOpen: boolean
@@ -126,7 +127,7 @@ const Navbar: React.FC = () => {
             <a href="" aria-label="facebook arteriego" target="_blank">
               <Instagram />
             </a>
-            <a href="" aria-label="facebook arteriego" target="_blank">
+            <a href={socialMedia.WhatsApp.url} aria-label="facebook arteriego" target="_blank">
               <WhatsApp />
             </a>
           </div>

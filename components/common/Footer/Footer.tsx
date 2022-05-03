@@ -10,6 +10,7 @@ import Logo from '../Logo'
 import Facebook from '@components/icons/Facebook'
 import Instagram from '@components/icons/Instagram'
 import WhatsApp from '@components/icons/WhatsApp'
+import { socialMedia } from '@data/socialMedia.data'
 
 const FooterStyled = styled.footer`
   padding-top: 50px;
@@ -191,10 +192,10 @@ const Footer: React.FC<Props> = () => {
               <a href="" aria-label="facebook arteriego" target="_blank">
                 <Facebook />
               </a>
-              <a href="" aria-label="facebook arteriego" target="_blank">
+              <a href="" aria-label="Instagram arteriego" target="_blank">
                 <Instagram />
               </a>
-              <a href="" aria-label="facebook arteriego" target="_blank">
+              <a href={socialMedia.WhatsApp.url} aria-label="WhatsApp arteriego" target="_blank">
                 <WhatsApp />
               </a>
             </div>

@@ -54,6 +54,16 @@ const HomeStyled = styled.div`
       color: ${({ theme }) => theme.colors.secundaryLight};
     }
 
+    @media (min-width: 475px) {
+      .hero__title {
+        font-size: 45px;
+      }
+
+      .hero__description {
+        font-size: 20px;
+      }
+    }
+
     @media (min-width: 768px) {
       height: calc(100vh - 116px);
 
@@ -286,13 +296,15 @@ const HomeStyled = styled.div`
       margin-bottom: 70px;
       transition: 1s;
 
-      &:hover .image__1 {
-        transform: translate(1000px);
-      }
+      @media (min-width: 1024px) {
+        &:hover .image__1 {
+          transform: translate(1000px);
+        }
 
-      &:hover .image__2 {
-        transform: translateX(100px) scale(1.2);
-        z-index: 101;
+        &:hover .image__2 {
+          transform: translate(100px, 40px) scale(1.2);
+          z-index: 101;
+        }
       }
     }
 
@@ -407,7 +419,7 @@ const Home: React.FC = () => {
       <Section className="services">
         <div className="services__container">
           <div className="services__header">
-            <h2 className="services__title">{serviceData.title}</h2>
+            <h1 className="services__title">{serviceData.title}</h1>
             <p className="services__text">{serviceData.text}</p>
           </div>
           <div className="services__grid">
@@ -503,8 +515,6 @@ const Home: React.FC = () => {
                     src={garden.image.url}
                     alt={garden.name}
                     aria-label="Image"
-                    width={garden.image.size.width}
-                    height={garden.image.size.height}
                     objectFit="cover"
                     layout="fill"
                     priority={false}

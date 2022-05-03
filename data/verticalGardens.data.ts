@@ -1,6 +1,6 @@
 export const verticalGardens = {
   title: 'Jardines verticales',
-  description: 'Instalamos jardines verticales, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
+  description: 'Nos especializamos en el suministro, la instalación y el mantenimiento de proyectos de jardines verticales comerciales y residenciales de lujo en todo Ecuador.',
   images: [
     {
       id: '001',

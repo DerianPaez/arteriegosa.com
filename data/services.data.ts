@@ -14,7 +14,7 @@ export type ServicesType = {
 
 export const services: ServicesType = {
   title: "Nuestros Servicios",
-  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+  text: "Nos enorgullecemos de brindar a nuestros clientes servicios de riego de la más alta calidad junto con los mejores productos disponibles.",
   servicesList: [
     {
       id: "001",
@@ -25,7 +25,7 @@ export const services: ServicesType = {
     {
       id: "002",
       name: "Diseño",
-      description: "Estudio que contenga la solución tecnológica adecuada para suplir las necesidades hídricas de su proyecto.",
+      description: "Diseños de riego especializados, cálculos hidráulicos, listas de cantidades, planos detallados, etc.",
       icon: "Design"
     },
     {

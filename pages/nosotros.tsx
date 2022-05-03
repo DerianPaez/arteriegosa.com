@@ -44,7 +44,7 @@ const AboutStyled = styled.div`
     .aboutUs__image {
       position: relative;
       grid-area: aboutImage;
-      min-height: 350px;
+      min-height: 450px;
 
       img {
         border-radius: 10px;

@@ -10,6 +10,7 @@ export const defaultTheme = {
     accent: '#05FF00',
     stroke: '#333333',
     shadow: '',
+    error: '#f16565',
   },
   positions: {
     header: 1000,

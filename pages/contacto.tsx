@@ -26,6 +26,10 @@ const ContactStyled = styled.div`
       gap: 30px;
     }
 
+    .contact__form__errors {
+      color: ${({ theme }) => theme.colors.error};
+    }
+
     .form {
       display: grid;
       grid-template-areas:
@@ -90,7 +94,7 @@ const Contact: React.FC = () => {
   const initialValues = { name: '', phone: '', email: '', service:'', message: '' }
   const validationSchema = Yup.object({
     name: Yup.string(),
-    phone: Yup.string().min(9).max(10),
+    phone: Yup.string(),
     email: Yup.string().email('Correo Invalido'),
     service: Yup.string(),
     message: Yup.string().required('El mensaje es Obligatorio')
@@ -107,7 +111,6 @@ const Contact: React.FC = () => {
     }
 
     const spanishKeyGenerator = spanishKey()
-
     for(let value of Object.values(values)) {
       const key = spanishKeyGenerator.next().value
       if(value !== "") {
@@ -121,6 +124,15 @@ const Contact: React.FC = () => {
     actions.resetForm()
   }
   const formik = useFormik({ initialValues, validationSchema, onSubmit })
+
+  const isObjectEmpty = (object: Object)  => {
+    return Object.entries(object).length === 0
+  }
+
+  const formikErrors = Object.values(formik.errors).map((value: string) => {
+    return value
+  })
+
   return (
     <ContactStyled>
       <Banner
@@ -131,6 +143,17 @@ const Contact: React.FC = () => {
         <div className="contact__container">
           <div className="contact__form">
             <H2 className="contact__form__title">{contactData.title}</H2>
+            {formikErrors.length !== 0 &&
+              <div className="contact__form__errors">
+                {
+                  formikErrors.map((error, index) => {
+                    const lastError = formikErrors.length - 1
+                    if(lastError === index) return error
+                    return error + " | "
+                  })
+                }
+              </div>
+            }
             <form className="form" action="" method="POST" onSubmit={formik.handleSubmit}>
               <Input id="name" form={formik} className="input name" type="text" name="name" placeholder="Nombres" />
               <Input id="phone" form={formik} className="input phone" type="tel" name="phone" placeholder="Celular" />

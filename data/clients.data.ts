@@ -12,7 +12,7 @@ export type ClientsType = {
 
 export const clients: ClientsType = {
   title: "Nuestros clientes",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  description: "Tenemos el privilegio de trabajar con algunas de las marcas más importantes del Ecuador.",
   clientList: [
     {
       id: "001",

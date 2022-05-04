@@ -75,17 +75,6 @@ export const projects: ProjectType[] = [
     ]
   },
   {
-    id: "007",
-    name: "Grupo Pronobis",
-    image: "/assets/projects/GrupoPronobis.png",
-    date: "20 ENERO, 2020",
-    importance: false,
-    worksDone: [
-      "Areas verdes",
-      "Sistema de riego"
-    ]
-  },
-  {
     id: "008",
     name: "Urbanización Aires del Batan",
     image: "/assets/projects/AiresDelBatan.png",
@@ -100,17 +89,6 @@ export const projects: ProjectType[] = [
     id: "009",
     name: "Colegio Alemán Humboldt",
     image: "/assets/projects/ColegioHumboldt.png",
-    date: "20 ENERO, 2020",
-    importance: false,
-    worksDone: [
-      "Areas verdes",
-      "Sistema de riego"
-    ]
-  },
-  {
-    id: "0010",
-    name: "Urbanización Aires del Batan",
-    image: "/assets/projects/AiresDelBatan.png",
     date: "20 ENERO, 2020",
     importance: false,
     worksDone: [

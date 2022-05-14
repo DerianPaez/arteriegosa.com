@@ -14,7 +14,8 @@ import { initStore } from '@state/store'
 import { defaultTheme } from '@config/themeConfig'
 
 // Components
-import { Head, Layout, Loader } from '@components/common'
+import { Layout, Loader } from '@components/common'
+import Head from 'next/head'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const store = initStore()
@@ -28,14 +29,20 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <Provider store={store}>
       <ThemeProvider theme={defaultTheme}>
-        <Head />
-        {
-          !isLoading
-            ? <Loader />
-            : <Layout>
-                <Component {...pageProps} />
-              </Layout>
-        }
+        <Head>
+          <title>ArteRiego S.A.</title>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+        </Head>
+        {!isLoading ? (
+          <Loader />
+        ) : (
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        )}
       </ThemeProvider>
     </Provider>
   )

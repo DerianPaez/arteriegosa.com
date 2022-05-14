@@ -11,7 +11,14 @@ import { team } from '@data/team.data'
 import { chooseUs } from '@data/chooseUs.data'
 
 // Components
-import { Banner, Section, StrategicMap, Teammate, ChooseUsItem } from '@components/common'
+import {
+  Banner,
+  Section,
+  StrategicMap,
+  Teammate,
+  ChooseUsItem
+} from '@components/common'
+import Head from 'next/head'
 
 const AboutStyled = styled.div`
   .aboutUs {
@@ -61,7 +68,11 @@ const AboutStyled = styled.div`
       height: 100%;
       z-index: 500;
       border-radius: 10px;
-      background: linear-gradient(to right, rgba(37, 114, 62, 0.3), rgba(37, 114, 62, 0.3));
+      background: linear-gradient(
+        to right,
+        rgba(37, 114, 62, 0.3),
+        rgba(37, 114, 62, 0.3)
+      );
     }
 
     .aboutUs__experience {
@@ -96,14 +107,14 @@ const AboutStyled = styled.div`
 
     @media (min-width: 768px) {
       .aboutUs__container {
-        grid-template-areas:
-        'aboutImage aboutText';
+        grid-template-areas: 'aboutImage aboutText';
         grid-template-columns: 1fr 1fr;
       }
     }
 
     @media (min-width: 1024px) {
-      .strategicMap__container, .aboutUs__content {
+      .strategicMap__container,
+      .aboutUs__content {
         gap: 30px;
       }
 
@@ -146,8 +157,8 @@ const AboutStyled = styled.div`
     }
 
     .team__title {
-        text-align: center;
-      }
+      text-align: center;
+    }
 
     .team__list {
       display: grid;
@@ -173,9 +184,7 @@ const AboutStyled = styled.div`
 const About: React.FC = () => {
   return (
     <AboutStyled>
-      <Banner
-        title='Sobre Nosotros'
-      />
+      <Banner title="Sobre Nosotros" />
 
       <Section className="aboutUs">
         <div className="aboutUs__container">
@@ -185,27 +194,39 @@ const About: React.FC = () => {
               <Paragraph>{aboutUs.text}</Paragraph>
             </div>
             <div className="strategicMap__container">
-              <StrategicMap icon="Mision" title={aboutUs.strategicMaps.mision.title} text={aboutUs.strategicMaps.mision.text}/>
-              <StrategicMap icon="Vision" title={aboutUs.strategicMaps.vision.title} text={aboutUs.strategicMaps.vision.text}/>
+              <StrategicMap
+                icon="Mision"
+                title={aboutUs.strategicMaps.mision.title}
+                text={aboutUs.strategicMaps.mision.text}
+              />
+              <StrategicMap
+                icon="Vision"
+                title={aboutUs.strategicMaps.vision.title}
+                text={aboutUs.strategicMaps.vision.text}
+              />
             </div>
           </div>
           <div className="aboutUs__image">
             <div className="aboutUs__image__gradiant"></div>
 
-            {aboutUs.image &&
+            {aboutUs.image && (
               <Image
-              src={aboutUs.image}
-              alt="Image"
-              layout="fill"
-              aria-label="Image"
-              objectFit="cover"
-              priority={true}
+                src={aboutUs.image}
+                alt="Image"
+                layout="fill"
+                aria-label="Image"
+                objectFit="cover"
+                priority={true}
               />
-            }
+            )}
 
             <div className="aboutUs__experience">
-              <p className="aboutUs__experience__year">{aboutUs.experience.year}</p>
-              <p className="aboutUs__experiece__text">{aboutUs.experience.text}</p>
+              <p className="aboutUs__experience__year">
+                {aboutUs.experience.year}
+              </p>
+              <p className="aboutUs__experiece__text">
+                {aboutUs.experience.text}
+              </p>
             </div>
           </div>
         </div>
@@ -215,9 +236,14 @@ const About: React.FC = () => {
         <div className="chooseUs__container">
           <H2 className="chooseUs__title__h2">{chooseUs.title}</H2>
           <div className="chooseUs__list">
-            {chooseUs.chooseUsList.map((item) => {
+            {chooseUs.chooseUsList.map(item => {
               return (
-                <ChooseUsItem key={item.id} icon={item.icon} title={item.title} text={item.text} />
+                <ChooseUsItem
+                  key={item.id}
+                  icon={item.icon}
+                  title={item.title}
+                  text={item.text}
+                />
               )
             })}
           </div>
@@ -228,13 +254,8 @@ const About: React.FC = () => {
         <div className="team__container">
           <H2 className="team__title">{team.title}</H2>
           <div className="team__list">
-            {team.teammates.map((temmate) => {
-              return (
-                <Teammate
-                  key={temmate.id}
-                  {...temmate}
-                />
-              )
+            {team.teammates.map(temmate => {
+              return <Teammate key={temmate.id} {...temmate} />
             })}
           </div>
         </div>

@@ -1,6 +1,8 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
+import Head from 'next/head'
+import { NextPage } from 'next'
 
 // Data
 import { hero as heroData } from '@data/hero.data'
@@ -32,8 +34,13 @@ const HomeStyled = styled.div`
     width: 100%;
     display: grid;
     align-items: center;
-    padding: 0 ;
-    background-image: linear-gradient(to right, rgb(0 0 0 / 59%), rgba(37, 114, 62, 0.3)), url('/assets/BackgroundHero.png');
+    padding: 0;
+    background-image: linear-gradient(
+        to right,
+        rgb(0 0 0 / 59%),
+        rgba(37, 114, 62, 0.3)
+      ),
+      url('/assets/BackgroundHero.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -44,10 +51,10 @@ const HomeStyled = styled.div`
     }
 
     .hero__title {
-        font-size: 32px;
-        font-weight: 500;
-        color: ${({ theme }) => theme.colors.secundaryLight};
-      }
+      font-size: 32px;
+      font-weight: 500;
+      color: ${({ theme }) => theme.colors.secundaryLight};
+    }
 
     .hero__description {
       max-width: 500px;
@@ -136,14 +143,19 @@ const HomeStyled = styled.div`
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: linear-gradient(to right, rgba(37, 114, 62, 0.7), rgba(37, 114, 62, 0.7)), url('/assets/BackgroundDrops.png');
+    background-image: linear-gradient(
+        to right,
+        rgba(37, 114, 62, 0.7),
+        rgba(37, 114, 62, 0.7)
+      ),
+      url('/assets/BackgroundDrops.png');
 
     .publicityProduct__container {
       display: grid;
       grid-template-areas:
-        "content"
-        "image"
-        "controllers";
+        'content'
+        'image'
+        'controllers';
       gap: 20px;
     }
 
@@ -211,9 +223,8 @@ const HomeStyled = styled.div`
         width: 90%;
         margin: 0 auto;
         justify-self: center;
-        grid-template-areas:
-        "image content";
-        grid-template-columns: .8fr 1fr;
+        grid-template-areas: 'image content';
+        grid-template-columns: 0.8fr 1fr;
         justify-content: center;
         align-items: center;
       }
@@ -384,14 +395,16 @@ const HomeStyled = styled.div`
   }
 `
 
-const Home: React.FC = () => {
+const Home: NextPage = () => {
   const filterByProjectImportance = (project: ProjectType) => project.importance
-  const featuredProjects: ProjectType[] = projectsData.filter(filterByProjectImportance)
+  const featuredProjects: ProjectType[] = projectsData.filter(
+    filterByProjectImportance
+  )
 
   const lastProduct = productList.length - 1
   const [product, setProduct] = React.useState(0)
   const nextProduct = () => {
-    if(lastProduct === product) {
+    if (lastProduct === product) {
       setProduct(0)
     } else {
       setProduct(p => ++p)
@@ -399,7 +412,7 @@ const Home: React.FC = () => {
   }
 
   const prevProduct = () => {
-    if(product === 0) {
+    if (product === 0) {
       setProduct(lastProduct)
     } else {
       setProduct(p => --p)
@@ -410,8 +423,8 @@ const Home: React.FC = () => {
     <HomeStyled>
       <Section className="hero">
         <div className="hero__content">
-          <h2 className='hero__title'>{heroData.headline}</h2>
-          <p className='hero__description'>{heroData.description}</p>
+          <h2 className="hero__title">{heroData.headline}</h2>
+          <p className="hero__description">{heroData.description}</p>
           <Button href="/contacto">{heroData.button}</Button>
         </div>
       </Section>
@@ -423,7 +436,7 @@ const Home: React.FC = () => {
             <p className="services__text">{serviceData.text}</p>
           </div>
           <div className="services__grid">
-            {serviceData.servicesList.map((service) => {
+            {serviceData.servicesList.map(service => {
               return (
                 <ServiceItem
                   key={service.id}
@@ -441,7 +454,7 @@ const Home: React.FC = () => {
       <Section className="publicityProduct">
         <div className="publicityProduct__container">
           <div className="publicityProduct__image">
-            {productList[product].image &&
+            {productList[product].image && (
               <Image
                 src={productList[product].image}
                 alt="Image"
@@ -451,7 +464,7 @@ const Home: React.FC = () => {
                 height={1080}
                 priority={false}
               />
-            }
+            )}
           </div>
           <div className="publicityProduct__content">
             <div className="publicityProduct__content__header">
@@ -461,7 +474,9 @@ const Home: React.FC = () => {
 
             <div className="publicityProduct__content__main">
               <h4 className="product__name">{productList[product].name}</h4>
-              {productList[product].model && <p className="product__model">{productList[product].model}</p>}
+              {productList[product].model && (
+                <p className="product__model">{productList[product].model}</p>
+              )}
             </div>
 
             <ul className="product__features">
@@ -489,13 +504,8 @@ const Home: React.FC = () => {
         <div className="featuredProjects__container">
           <h2 className="featuredProjects__title">Proyectos Destacados</h2>
           <div className="featuredProjects__list">
-            {featuredProjects.map((project) => {
-              return (
-                <FeaturedProject
-                  key={project.id}
-                  { ...project }
-                />
-              )
+            {featuredProjects.map(project => {
+              return <FeaturedProject key={project.id} {...project} />
             })}
           </div>
         </div>
@@ -539,10 +549,8 @@ const Home: React.FC = () => {
             <p className="clients__description">{clientsData.description}</p>
           </div>
           <div className="clients__list">
-            {clientsData.clientList.map((client) => {
-              return (
-                <Brand key={client.id} { ...client } />
-              )
+            {clientsData.clientList.map(client => {
+              return <Brand key={client.id} {...client} />
             })}
           </div>
         </div>

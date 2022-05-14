@@ -1,7 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
-import Head from 'next/head'
 import { NextPage } from 'next'
 
 // Data

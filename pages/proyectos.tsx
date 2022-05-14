@@ -4,10 +4,7 @@ import styled from 'styled-components'
 // Components
 import { Banner, Project, Section } from '@components/common'
 import { projects } from '@data/projects.data'
-
-type Props = {
-  
-}
+import { NextPage } from 'next'
 
 const ProjectsStyled = styled.div`
   /*  */
@@ -31,21 +28,14 @@ const ProjectsStyled = styled.div`
   }
 `
 
-const Projects: React.FC<Props> = () => {
+const Projects: NextPage = () => {
   return (
     <ProjectsStyled>
-      <Banner
-        title="Proyectos"
-      />
+      <Banner title="Proyectos" />
       <Section className="projects">
         <div className="projects__list">
-          {projects.map((project) => {
-            return (
-              <Project
-                key={project.id}
-                { ...project }
-              />
-            )
+          {projects.map(project => {
+            return <Project key={project.id} {...project} />
           })}
         </div>
       </Section>

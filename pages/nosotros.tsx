@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Image from 'next/image'
 import styled from 'styled-components'
+import { NextPage } from 'next'
 
 // Theme
 import { H2, Paragraph } from '@config/themeConfig'
@@ -18,7 +19,6 @@ import {
   Teammate,
   ChooseUsItem
 } from '@components/common'
-import Head from 'next/head'
 
 const AboutStyled = styled.div`
   .aboutUs {
@@ -181,7 +181,7 @@ const AboutStyled = styled.div`
   }
 `
 
-const About: React.FC = () => {
+const About: NextPage = () => {
   return (
     <AboutStyled>
       <Banner title="Sobre Nosotros" />

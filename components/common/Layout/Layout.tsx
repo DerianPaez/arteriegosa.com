@@ -1,6 +1,5 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import Head from 'next/head'
 
 // Components
 import { Header, Navbar, Footer } from '@components/common'
@@ -35,10 +34,10 @@ const Layout: React.FC<Props> = ({ children }) => {
   const { isSidebarOpen } = useUi()
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>ArteRiego S.A.</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
+      </Head> */}
       <LayoutStyles isSidebarOpen={isSidebarOpen}>
         <Header />
         <Navbar />

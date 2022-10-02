@@ -39,8 +39,8 @@ const HomeStyled = styled.div`
         rgb(0 0 0 / 59%),
         rgba(37, 114, 62, 0.3)
       ),
-      url('/assets/BackgroundHero.png');
-    background-position: center;
+      url('/assets/HeroBarcelona.jpeg');
+    background-position: top right;
     background-repeat: no-repeat;
     background-size: cover;
 
